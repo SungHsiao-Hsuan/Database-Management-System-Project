@@ -1,0 +1,192 @@
+CREATE TABLE THERAPIST (
+
+  therapist_id INT NOT NULL AUTO_INCREMENT,
+  first_name VARCHAR(20),
+  last_name VARCHAR(20),
+  sex VARCHAR(1),
+  birth DATE,
+  ssn CHAR(10) UNIQUE,
+  phone CHAR(10),
+  address VARCHAR(200),
+  join_date DATE,
+  salary INT,
+
+  PRIMARY KEY (therapist_id, ssn)
+);
+
+INSERT INTO therapist VALUES(NULL,"Maomao", "Sung", "F", "1995-05-14", "1234567890", "0911223445", "Maomao street NO.18", "2017-10-01", 60000);
+INSERT INTO therapist VALUES(NULL,"Patato", "Pui", "M", "2000-03-26", "5683947568", "0947384567", "Pui street NO.20", "2020-09-12", 60000);
+INSERT INTO therapist VALUES(NULL,"Shimoro", "Car", "M", "2001-02-19", "5839677735", "0912859984", "Happy street NO.36", "2019-02-08", 60000);
+INSERT INTO therapist VALUES(NULL,"Abi", "Yellow", "M", "2002-10-23", "7739849128", "0909354677", "Sticker street NO.11", "2021-05-03", 60000);
+INSERT INTO therapist VALUES(NULL,"Choco", "White", "F", "1999-08-08", "2847386225", "0972573498", "Chocolate street NO.23", "2019-03-01", 60000);
+INSERT INTO therapist VALUES(NULL,"Teddy", "Bear", "M", "1990-12-31", "6247692825", "0998635267", "Kawaii street NO.18", "2020-06-12", 60000);
+INSERT INTO therapist VALUES(NULL,"Peter", "Wang", "M", "1987-03-11", "4836555732", "0916349876", "Amer street NO.99", "2021-10-15", 60000);
+INSERT INTO therapist VALUES(NULL,"Rose", "Red", "F", "1999-04-20", "2754839466", "0967344251", "Hana street NO.101", "2021-10-15", 60000);
+INSERT INTO therapist VALUES(NULL,"Rabbit", "Usami", "F", "2000-12-30", "4635738954", "0912288994", "Hihu street NO.3", "2021-10-15", 60000);
+INSERT INTO therapist VALUES(NULL,"Mary", "Hearn", "F", "2000-11-23", "3564738990", "0934257189", "England street NO.21", "2021-10-16", 60000);
+
+CREATE TABLE PATIENT (
+
+  patient_id INT NOT NULL AUTO_INCREMENT,
+  first_name VARCHAR(20),
+  last_name VARCHAR(20),
+  sex VARCHAR(1),
+  birth DATE,
+  ssn CHAR(10),
+  phone CHAR(10),
+  address VARCHAR(200),
+  attend_therapist INT,
+
+  PRIMARY KEY(patient_id,ssn),
+  FOREIGN KEY(attend_therapist) REFERENCES therapist(therapist_id) ON DELETE CASCADE ON UPDATE CASCADE
+
+);
+
+INSERT INTO patient VALUES(NULL,"Eren", "Yeager", "M", "1996-03-30", "7729088620", "0922925124", "Leaf street NO.221", 1);
+INSERT INTO patient VALUES(NULL,"Mikasa", "Ackerman", "F", "1996-02-10", "6225673390", "0952058814", "Akaham street NO.304", 5);
+INSERT INTO patient VALUES(NULL,"Armin", "Arlert", "M", "1996-11-03", "3851674493", "0952542374", "Yama street NO.119", 3);
+INSERT INTO patient VALUES(NULL,"Darius", "Zackley", "M", "1980-04-15", "5008650668", "0970149831", "Policy street NO.100", 9);
+INSERT INTO patient VALUES(NULL,"Keith", "Shadis", "M", "1965-08-18", "2901007587", "0973065830", "Search street NO.364", 10);
+INSERT INTO patient VALUES(NULL,"Reiner", "Braun", "M", "1994-08-01", "6925156401", "0901101815", "Candy street NO.33", 8);
+INSERT INTO patient VALUES(NULL,"Bertholdt", "Hoover", "M", "1994-12-30", "7308161269", "0949213641", "Elm street NO.56", 7);
+INSERT INTO patient VALUES(NULL,"Annie", "Leonhart", "F", "1995-03-22", "9501588715", "0967595741", "Ash street NO.334", 6);
+INSERT INTO patient VALUES(NULL,"Jean", "Kirschstein", "M", "1996-04-07", "6948611726", "0915440415", "Hickory street NO.334", 2);
+INSERT INTO patient VALUES(NULL,"Marco", "Bott", "M", "1995-06-16", "5836996939", "0965459150", "State street NO.9", 4);
+
+CREATE TABLE DEPENDENT (
+
+  Essn CHAR(10) NOT NULL,
+  first_name VARCHAR(20),
+  sex VARCHAR(1),
+  ssn CHAR(10),
+  phone CHAR(10),
+  relationship VARCHAR(50),
+
+  PRIMARY KEY(ssn),
+  FOREIGN KEY(Essn) REFERENCES THERAPIST(ssn) ON DELETE CASCADE ON UPDATE CASCADE
+
+);
+
+INSERT INTO dependent VALUES("5683947568", "Agnes", "F", "6243167268",NULL, "daughter");
+INSERT INTO dependent VALUES("5683947568", "Eric", "M", "6726842396", NULL, "son");
+INSERT INTO dependent VALUES("5683947568", "Aurora", "F", "0885940909", "0967224929", "wife");
+INSERT INTO dependent VALUES("2847386225", "Chloe", "F", "4279760709", NULL, "daughter");
+INSERT INTO dependent VALUES("4836555732", "Danielle", "F", "3864167187", "0972056265", "daughter");
+INSERT INTO dependent VALUES("4836555732", "Sophia", "F", "1599535901", "0963338922", "wife");
+INSERT INTO dependent VALUES("4836555732", "Kristen", "F", "1491768340", "0909301885", "daughter");
+INSERT INTO dependent VALUES("4836555732", "Alden", "M", "7875236360", "0900508428", "son");
+INSERT INTO dependent VALUES("6247692825", "Alden", "M", "5541226114", NULL, "son");
+INSERT INTO dependent VALUES("6247692825", "Angela", "F", "3272938333", NULL, "daughter");
+
+CREATE TABLE ASSESSMENT (
+
+    id INT NOT NULL AUTO_INCREMENT,
+    assessment_name VARCHAR(100) NOT NULL UNIQUE,
+    price INT,
+    duration INT,
+
+    PRIMARY KEY(id, assessment_name)
+
+);
+
+INSERT INTO assessment VALUES(NULL, "Cervical assessment", 900, 20);
+INSERT INTO assessment VALUES(NULL, "TMJ assessment", 400, 15);
+INSERT INTO assessment VALUES(NULL, "Shoulder assessment", 800, 25);
+INSERT INTO assessment VALUES(NULL, "Elbow assessment", 400, 15);
+INSERT INTO assessment VALUES(NULL, "Wrist assessment", 500, 20);
+INSERT INTO assessment VALUES(NULL, "fingers assessment", 300, 15);
+INSERT INTO assessment VALUES(NULL, "Lumbar assessment", 900, 25);
+INSERT INTO assessment VALUES(NULL, "Pelvic assessment", 800, 25);
+INSERT INTO assessment VALUES(NULL, "HIP assessment", 600, 20);
+INSERT INTO assessment VALUES(NULL, "Knee assessment", 700, 25);
+INSERT INTO assessment VALUES(NULL, "Ankle assessment", 500, 20);
+INSERT INTO assessment VALUES(NULL, "Foot assessment", 500, 20);
+INSERT INTO assessment VALUES(NULL, "Other assessment", 600, 20);
+
+CREATE TABLE TREATMENT (
+
+    id INT NOT NULL AUTO_INCREMENT,
+    treat_name VARCHAR(100) NOT NULL UNIQUE,
+    price INT,
+    duration INT,
+
+    PRIMARY KEY(id, treat_name)
+
+);
+
+INSERT INTO treatment VALUES(NULL, "Cervical treatment", 800, 30);
+INSERT INTO treatment VALUES(NULL, "TMJ treatment", 400, 25);
+INSERT INTO treatment VALUES(NULL, "Shoulder treatment", 700, 30);
+INSERT INTO treatment VALUES(NULL, "Elbow treatment", 300, 15);
+INSERT INTO treatment VALUES(NULL, "Wrist treatment", 400, 20);
+INSERT INTO treatment VALUES(NULL, "fingers treatment", 300, 15);
+INSERT INTO treatment VALUES(NULL, "Lumbar treatment", 800, 30);
+INSERT INTO treatment VALUES(NULL, "Pelvic treatment", 700, 30);
+INSERT INTO treatment VALUES(NULL, "HIP treatment", 500, 25);
+INSERT INTO treatment VALUES(NULL, "Knee treatment", 600, 30);
+INSERT INTO treatment VALUES(NULL, "Ankle treatment", 400, 20);
+INSERT INTO treatment VALUES(NULL, "Foot treatment", 500, 20);
+INSERT INTO treatment VALUES(NULL, "Other treatment", 600, 20);
+INSERT INTO treatment VALUES(NULL, "Home Exercise", 0, 10);
+INSERT INTO treatment VALUES(NULL, "Taping", 0, 10);
+INSERT INTO treatment VALUES(NULL, "Modality", 0, 30);
+
+CREATE TABLE make_assess (
+
+    id INT NOT NULL AUTO_INCREMENT,
+    therapist_id INT NOT NULL,
+    patient_id INT NOT NULL,
+    assess_name VARCHAR(100) NOT NULL,
+    assess_date DATE,
+    description VARCHAR(500),
+    price INT,
+
+    PRIMARY KEY(id, therapist_id, patient_id),
+    FOREIGN KEY(therapist_id) REFERENCES THERAPIST(therapist_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(patient_id) REFERENCES patient(patient_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(assess_name) REFERENCES ASSESSMENT(assessment_name) ON DELETE CASCADE ON UPDATE CASCADE
+
+);
+
+INSERT INTO make_assess VALUES(NULL, 1, 1, 'Shoulder assessment', NOW(), 'Early Frozen shoulder', 800);
+INSERT INTO make_assess VALUES(NULL, 1, 1, 'Ankle assessment', NOW(), 'ATFL sprain', 500);
+INSERT INTO make_assess VALUES(NULL, 5, 2, 'Wrist assessment', NOW(), 'TFCC sprain', 500);
+INSERT INTO make_assess VALUES(NULL, 3, 3, 'Cervical assessment', NOW(), 'herniated disc on C6', 900);
+INSERT INTO make_assess VALUES(NULL, 9, 4, 'Lumbar assessment', NOW(), 'Lumbar Spondylolisthesis on L3', 900);
+INSERT INTO make_assess VALUES(NULL, 10, 5, 'Elbow assessment', NOW(), 'student elbow', 400);
+INSERT INTO make_assess VALUES(NULL, 8, 6, 'Knee assessment', NOW(), 'ACL sprain', 700);
+INSERT INTO make_assess VALUES(NULL, 7, 7, 'TMJ assessment', NOW(), 'wrong with TMJ movement patterns', 400);
+INSERT INTO make_assess VALUES(NULL, 6, 8, 'HIP assessment', NOW(), 'Hip Labral Tear', 600);
+INSERT INTO make_assess VALUES(NULL, 2, 9, 'Foot assessment', NOW(), 'cuboid bone dislocation', 500);
+INSERT INTO make_assess VALUES(NULL, 4, 10, 'Other assessment', NOW(), 'Facial Palsy', 600);
+
+CREATE TABLE implement_treat (
+
+    id INT NOT NULL AUTO_INCREMENT,
+    therapist_id INT NOT NULL,
+    patient_id INT NOT NULL,
+    treat_name VARCHAR(100) NOT NULL,
+    treat_date DATE,
+    description VARCHAR(500),
+    price INT,
+
+    PRIMARY KEY(id, therapist_id, patient_id, treat_name),
+    FOREIGN KEY(therapist_id) REFERENCES THERAPIST(therapist_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(patient_id) REFERENCES patient(patient_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(treat_name) REFERENCES treatment(treat_name) ON DELETE CASCADE ON UPDATE CASCADE
+
+);
+
+INSERT INTO implement_treat VALUES(NULL, 1, 1, 'Shoulder treatment', NOW(), 'Shoulder mobilization, relief muslce', 700);
+INSERT INTO implement_treat VALUES(NULL, 5, 2, 'Wrist treatment', NOW(), 'soft tissue mobilization', 400);
+INSERT INTO implement_treat VALUES(NULL, 5, 2, 'Taping', NOW(), 'Taping on TFCC', 0);
+INSERT INTO implement_treat VALUES(NULL, 3, 3, 'Cervical treatment', NOW(), 'Camel-Cat exercise, relief spinal muscle', 800);
+INSERT INTO implement_treat VALUES(NULL, 3, 3, 'Home Exercise', NOW(), 'Camel-Cat exercise', 0);
+INSERT INTO implement_treat VALUES(NULL, 9, 4, 'Lumbar treatment', NOW(), 'Deep tissue massage', 800);
+INSERT INTO implement_treat VALUES(NULL, 10, 5, 'Modality', NOW(), 'TENS on elbow', 0);
+INSERT INTO implement_treat VALUES(NULL, 8, 6, 'Knee treatment', NOW(), 'Gait training', 600);
+INSERT INTO implement_treat VALUES(NULL, 7, 7, 'TMJ treatment', NOW(), 'release facial muscle', 400);
+INSERT INTO implement_treat VALUES(NULL, 6, 8, 'HIP treatment', NOW(), 'correct posture and release hip muscle', 500);
+INSERT INTO implement_treat VALUES(NULL, 2, 9, 'Foot treatment', NOW(), 'cuboid bone relocation', 500);
+INSERT INTO implement_treat VALUES(NULL, 4, 10, 'Other treatment', NOW(), 'facial massage', 600);
+INSERT INTO implement_treat VALUES(NULL, 4, 10, 'Modality', NOW(), 'TENS on face muscle', 600);
