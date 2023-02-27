@@ -18,5 +18,12 @@ This final project is to practice designing a database and data to learn the syn
 * **Environment:** MySQL + python 3.9
 * **Interface Screenshot and Usage Instructions**
 
-![image](https://github.com/SungHsiao-Hsuan/Database-Management-System-Project/blob/main/README_picture/interface.jpg)
+<img src="https://github.com/SungHsiao-Hsuan/Database-Management-System-Project/blob/main/README_picture/interface.jpg" width="500">
+
+* **Query tools:** <br>
+* **Query keywords:** <br>
+* **Clear Button:** <br>
+
+#### Database design
+
 
