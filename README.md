@@ -1,5 +1,7 @@
 ## Database-Management-System-Project
 
+The full report is in the Database-Management-System-Project directory.
+
 ### Description
 This final project is to practice designing a database and data to learn the syntax of SQL instructions.
 
