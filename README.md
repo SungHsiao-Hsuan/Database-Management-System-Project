@@ -23,12 +23,11 @@ This final project is to practice designing a database and data to learn the syn
 <img src="https://github.com/SungHsiao-Hsuan/Database-Management-System-Project/blob/main/README_picture/interface.jpg" width="500">
 
 * **Query tools:** <br>
-Select the SQL command you want to execute and click the Search button in the Query tools section. If the SQL command <br>
-executes successfully, "xxx successfully executed" will be displayed under the Search button in the Query tools section. <br>
-If it fails, no message will be displayed. <br>
-The options available in the Query tools section are SELECT-FROM-WHERE, DELETE, INSERT, UPDATE, IN, NOT IN, EXISTS, NOT EXISTS, COUNT, SUM, 
-MAX, MIN, AVG, and HAVING. Except for the DELETE, INSERT and UPDATE commands, all other commands will display the query results in the 
-Query Results section below.
+Select the SQL command you want to execute and click the Search button in the Query tools section. <br>
+If the SQL command executes successfully, "xxx successfully executed" will be displayed under the Search button in the Query tools section. <br>
+If it fails, no message will be displayed.The options available in the Query tools section are SELECT-FROM-WHERE, DELETE, INSERT, UPDATE, <br>
+IN, NOT IN, EXISTS, NOT EXISTS, COUNT, SUM, MAX, MIN, AVG, and HAVING. Except for the DELETE, INSERT and UPDATE commands, all other <br>
+commands will display the query results in the Query Results section below.
 
 * **Query keywords:** <br>
 * **Clear Button:** <br>
