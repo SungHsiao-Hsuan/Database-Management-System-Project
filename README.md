@@ -24,10 +24,10 @@ This final project is to practice designing a database and data to learn the syn
 
 * **Query tools:** <br>
 Select the SQL command you want to execute and click the Search button in the Query tools section. <br>
-If the SQL command executes successfully, "xxx successfully executed" will be displayed under the Search button in the Query tools section. <br>
-If it fails, no message will be displayed.The options available in the Query tools section are SELECT-FROM-WHERE, DELETE, INSERT, UPDATE, <br>
-IN, NOT IN, EXISTS, NOT EXISTS, COUNT, SUM, MAX, MIN, AVG, and HAVING. Except for the DELETE, INSERT and UPDATE commands, all other <br>
-commands will display the query results in the Query Results section below.
+If the SQL command executes successfully, "xxx successfully executed" will be displayed under the Search button <br>
+in the Query tools section.If it fails, no message will be displayed.The options available in the Query tools section <br>
+are SELECT-FROM-WHERE, DELETE, INSERT, UPDATE, IN, NOT IN, EXISTS, NOT EXISTS, COUNT, SUM, MAX, MIN, AVG, and HAVING. <br>
+Except for the DELETE, INSERT and UPDATE commands, all other commands will display the query results in the Query Results section below.
 
 * **Query keywords:** <br>
 * **Clear Button:** <br>
