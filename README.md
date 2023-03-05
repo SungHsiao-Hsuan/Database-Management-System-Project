@@ -45,8 +45,8 @@ Clicking the Clear button will remove all content from the Query Results.
 #### Database design
 
 * **ER diagram** <br>
-<img src="https://github.com/SungHsiao-Hsuan/Database-Management-System-Project/blob/main/README_picture/ER%20diagram.png" width="500">
+<img src="https://github.com/SungHsiao-Hsuan/Database-Management-System-Project/blob/main/README_picture/ER%20diagram.png" width="700">
 
 * **Relation schema** <br>
-<img src="https://github.com/SungHsiao-Hsuan/Database-Management-System-Project/blob/main/README_picture/Relation%20Schema.jpg" width="500">
+<img src="https://github.com/SungHsiao-Hsuan/Database-Management-System-Project/blob/main/README_picture/Relation%20Schema.jpg" width="700">
 
