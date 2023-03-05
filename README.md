@@ -30,9 +30,23 @@ are SELECT-FROM-WHERE, DELETE, INSERT, UPDATE, IN, NOT IN, EXISTS, NOT EXISTS, C
 AVG, and HAVING. Except for the DELETE, INSERT and UPDATE commands, all other commands will display the <br>
 query results in the Query Results section below.
 
+<img src="https://github.com/SungHsiao-Hsuan/Database-Management-System-Project/blob/main/README_picture/query_tools.jpg" width="500">
+
 * **Query keywords:** <br>
+You can enter the command in the Query keywords section and click the Search button to execute a SQL command. <br>
+If the SQL command is executed successfully, "Executed xxx successfully" will be displayed below the Search button. <br>
+If the command fails, no text will be displayed. <br>
+Except for the Delete, Insert, and Update commands, all other commands will display the query results in the Query Results section below.
+
+<img src="https://github.com/SungHsiao-Hsuan/Database-Management-System-Project/blob/main/README_picture/query_keywords.jpg" width="500">
 * **Clear Button:** <br>
+Clicking the Clear button will remove all content from the Query Results.
 
 #### Database design
 
+* **ER diagram** <br>
+<img src="https://github.com/SungHsiao-Hsuan/Database-Management-System-Project/blob/main/README_picture/ER%20diagram.png" width="500">
+
+* **Relation schema** <br>
+<img src="https://github.com/SungHsiao-Hsuan/Database-Management-System-Project/blob/main/README_picture/Relation%20Schema.jpg" width="500">
 
